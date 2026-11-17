@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products — Skin—Clinic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="header"></div>
+
+  <main class="catalog container">
+    <aside class="filters" id="filters">
+      <div class="filters__head" id="filters-close">
+        <span class="filters__heading">Filters</span>
+        <img class="filters__icon" src="assets/icons/filters.svg" alt="">
+      </div>
+      <div class="hr"></div>
+      <div class="filters__cats" id="filter-cats"></div>
+      <div class="hr"></div>
+      <div class="filters__price">
+        <div class="filters__price-head">
+          <span class="filters__heading">Price</span>
+          <img src="assets/icons/chevron.svg" alt="">
+        </div>
+        <div class="range" id="range">
+          <div class="range__track"></div>
+          <div class="range__fill" id="range-fill"></div>
+          <input type="range" id="price-min" min="0" max="100" step="1" value="0" aria-label="Min price">
+          <input type="range" id="price-max" min="0" max="100" step="1" value="100" aria-label="Max price">
+          <span class="range__label" id="label-min">$0</span>
+          <span class="range__label" id="label-max">$100</span>
+        </div>
+      </div>
+      <div class="hr"></div>
+      <button class="btn-pill btn-pill--black" id="apply-filter">Apply Filter</button>
+    </aside>
+    <div class="sheet-overlay" id="sheet-overlay"></div>
+
+    <div class="catalog__head">
+      <h1 class="catalog__title t-h2" id="catalog-title">All products</h1>
+      <button class="filter-toggle" id="filter-open" aria-label="Filters"><img src="assets/icons/filter-btn.svg" alt=""></button>
+    </div>
+    <div class="products-row products-row--grid" id="grid"></div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/products.js"></script>
+</body>
+</html>

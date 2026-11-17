@@ -1,0 +1,8 @@
+# Test account credentials — never commit
+test-account.txt
+
+# Working files from Figma (not needed for the site)
+raw/
+design/
+
+.DS_Store

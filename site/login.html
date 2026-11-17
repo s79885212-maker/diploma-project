@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In — Skin—Clinic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-auth">
+  <div id="header"></div>
+
+  <main class="auth">
+    <form id="login-form" novalidate>
+      <h1 class="form-title t-h2">Log In</h1>
+      <label class="field">
+        <span class="field__label">Email</span>
+        <input class="field__input" type="email" name="email" placeholder="Email" autocomplete="email" required>
+      </label>
+      <label class="field">
+        <span class="field__label">Password</span>
+        <input class="field__input" type="password" name="password" placeholder="Your password" autocomplete="current-password" required>
+      </label>
+      <button class="btn-form" type="submit">Log In</button>
+      <p class="form-error" id="form-error"></p>
+      <p class="form-alt">No account? <a href="register.html" id="to-register">Register</a></p>
+    </form>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

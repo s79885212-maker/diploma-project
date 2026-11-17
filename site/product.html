@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product — Skin—Clinic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="header"></div>
+
+  <main class="pdp container" id="pdp">
+    <div class="pdp__top">
+      <div class="pdp__img" id="pdp-img"></div>
+      <div class="pdp__info">
+        <h1 class="pdp__title" id="pdp-title"></h1>
+        <p class="pdp__price" id="pdp-price"></p>
+        <div class="pdp__actions">
+          <div class="qty">
+            <button type="button" id="qty-minus" aria-label="Decrease"><img src="assets/icons/minus.svg" alt=""></button>
+            <span class="qty__value" id="qty-value">1</span>
+            <button type="button" id="qty-plus" aria-label="Increase"><img src="assets/icons/plus.svg" alt=""></button>
+          </div>
+          <button class="btn-pill btn-pill--black" id="add-to-cart">Add to cart</button>
+        </div>
+        <p class="pdp__msg" id="pdp-msg"></p>
+      </div>
+    </div>
+
+    <section class="reviews">
+      <div class="reviews__head">
+        <div class="reviews__heading">
+          <h2 class="reviews__title">All Reviews</h2>
+          <span class="reviews__count" id="reviews-count"></span>
+        </div>
+        <button class="reviews__write" id="write-review">Write a Review</button>
+      </div>
+      <div class="reviews__grid" id="reviews"></div>
+    </section>
+  </main>
+
+  <div class="modal" id="comment-modal" hidden role="dialog" aria-modal="true" aria-labelledby="comment-title">
+    <form class="modal__card modal__card--comment" id="comment-form">
+      <div>
+        <h2 class="form-title t-h2" id="comment-title">Leave a comment</h2>
+        <label class="field">
+          <span class="field__label">Text</span>
+          <textarea class="field__input" name="text" placeholder="Your comment" minlength="2" maxlength="300" required></textarea>
+        </label>
+        <p class="form-error" id="comment-error"></p>
+        <button class="btn-form" type="submit">Send</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="footer"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/product.js"></script>
+</body>
+</html>

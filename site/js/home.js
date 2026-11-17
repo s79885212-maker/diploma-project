@@ -1,0 +1,22 @@
+// Home: best sellers, categories, featured products (newest) — all from the sandbox API
+document.addEventListener('DOMContentLoaded', async () => {
+  const best = document.getElementById('bestsellers');
+  const cats = document.getElementById('categories');
+  const featured = document.getElementById('featured');
+
+  api.bestsellers(4)
+    .then((d) => best.replaceChildren(...d.products.map((p) => productCard(p))))
+    .catch((e) => best.replaceChildren(statusText(e.message)));
+
+  getCategories().then((list) => {
+    cats.replaceChildren(...list.slice(0, 3).map((c) =>
+      h('a', { class: 'category', href: 'products.html?category=' + encodeURIComponent(c._id) },
+        h('img', { src: c.image, alt: c.title }),
+        h('span', { class: 'btn-glass t-base' }, c.title),
+      )));
+  });
+
+  api.newest(12)
+    .then((d) => featured.replaceChildren(...d.products.map((p) => productCard(p))))
+    .catch((e) => featured.replaceChildren(statusText(e.message)));
+});

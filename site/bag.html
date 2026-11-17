@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your bag — Skin—Clinic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="header"></div>
+
+  <main class="bag">
+    <div class="bag__main">
+      <h1 class="bag__title t-h2">Your bag</h1>
+      <div class="bag__list" id="bag-list"></div>
+    </div>
+
+    <aside class="summary">
+      <p class="summary__title">Order Summary</p>
+      <div class="summary__rows">
+        <div class="summary__row summary__row--sub summary__extra">
+          <span class="summary__label">Subtotal</span>
+          <span class="summary__value" id="sum-subtotal">0</span>
+        </div>
+        <div class="summary__row summary__row--sub summary__extra">
+          <span class="summary__label">Discount (-0%)</span>
+          <span class="summary__value summary__value--red">0</span>
+        </div>
+        <div class="summary__hr summary__extra"></div>
+        <div class="summary__row">
+          <span class="summary__label">Total</span>
+          <span class="summary__total" id="sum-total">0</span>
+        </div>
+      </div>
+      <button class="btn-pill btn-pill--white" id="checkout">Go to checkout</button>
+    </aside>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/bag.js"></script>
+</body>
+</html>

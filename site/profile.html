@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile — Skin—Clinic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="header"></div>
+
+  <main class="profile container">
+    <div class="profile__info">
+      <p class="profile__label t-sub">My Profile</p>
+      <h1 class="profile__name t-h1" id="p-name">&nbsp;</h1>
+      <p class="profile__phone t-sub" id="p-phone">&nbsp;</p>
+      <p class="profile__email t-base" id="p-email">&nbsp;</p>
+      <button class="btn-form profile__logout" id="logout">Log out</button>
+    </div>
+
+    <h2 class="profile__orders-title t-h2">My orders</h2>
+    <div class="products-row" id="orders"></div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

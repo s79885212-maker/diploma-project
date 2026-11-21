@@ -71,7 +71,7 @@ ul { list-style: none; }
 .products-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 24px; row-gap: 32px; }
 .card { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
 .card__img { width: 100%; aspect-ratio: 282 / 324; border-radius: 8px; background: var(--light); overflow: hidden; }
-.card__img img { width: 100%; height: 100%; object-fit: contain; }
+.card__img img { width: 100%; height: 100%; object-fit: cover; }
 .card__info { display: flex; gap: 8px; height: 16px; }
 .card__title { flex: 1 1 0; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .card__price { flex: none; }
@@ -141,7 +141,7 @@ ul { list-style: none; }
 .bag__list { display: flex; flex-direction: column; gap: 14px; }
 .bag-item { position: relative; display: flex; gap: 20px; height: 176px; }
 .bag-item__img { flex: none; width: 176px; height: 176px; border-radius: 8px; background: var(--light); overflow: hidden; }
-.bag-item__img img { width: 100%; height: 100%; object-fit: contain; }
+.bag-item__img img { width: 100%; height: 100%; object-fit: cover; }
 .bag-item__body { position: relative; flex: 1; min-width: 0; padding-top: 31px; }
 .bag-item__title { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .bag-item__price { margin-top: 10px; }
@@ -168,7 +168,7 @@ ul { list-style: none; }
 .pdp { padding-top: 80px; padding-bottom: 76px; }
 .pdp__top { display: flex; gap: 36px; }
 .pdp__img { flex: none; width: 610px; height: 530px; background: var(--img-bg); overflow: hidden; }
-.pdp__img img { width: 100%; height: 100%; object-fit: contain; }
+.pdp__img img { width: 100%; height: 100%; object-fit: cover; }
 .pdp__info { position: relative; padding-top: 39px; font-family: var(--sf); min-width: 0; }
 .pdp__title { font-weight: 600; font-size: 40px; line-height: 48px; }
 .pdp__price { margin-top: 12px; font-weight: 600; font-size: 32px; line-height: 38px; }

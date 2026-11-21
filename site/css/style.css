@@ -41,9 +41,9 @@ ul { list-style: none; }
 
 /* ============ Header (desktop) ============ */
 .header { position: relative; height: 69px; background: var(--white); border-bottom: 1px solid var(--black); z-index: 20; }
-.header__inner { position: relative; height: 100%; padding: 0 6.04%; display: flex; align-items: center; justify-content: space-between; }
-.header__nav { display: flex; gap: 56px; }
-.header__logo { position: absolute; left: 50%; top: 9px; transform: translateX(-50%); width: 137.88px; height: 51.13px; }
+.header__inner { position: relative; height: 100%; padding: 0 3.125%; display: flex; align-items: center; justify-content: space-between; }
+.header__nav { display: flex; gap: max(24px, calc(5.365vw - 41.35px)); }
+.header__logo { position: absolute; left: 50%; top: 9px; transform: translateX(-50%); width: 147.07px; height: 51.13px; }
 .header__logo img { width: 100%; height: 100%; object-fit: contain; }
 .header__menu { display: none; }
 .header__account { text-align: right; }
@@ -78,7 +78,7 @@ ul { list-style: none; }
 
 /* ============ Home ============ */
 .hero { position: relative; height: 654px; background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/img/hero.jpg') center / cover no-repeat; }
-.hero__inner { height: 100%; display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 129px; }
+.hero__inner { height: 100%; display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 60px; }
 .hero__offer { width: 588px; max-width: 100%; display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
 .hero__text { display: flex; flex-direction: column; gap: 16px; color: var(--white); align-self: stretch; }
 .hero__sub, .hero__title--mobile { display: none; }
@@ -104,12 +104,12 @@ ul { list-style: none; }
 .filters { position: absolute; top: 42px; left: -315px; width: 295px; padding: 19px 23px; display: flex; flex-direction: column; gap: 24px; border: 1px solid var(--border-soft); border-radius: 20px; background: var(--white); font-family: var(--sf); }
 .filters__head, .filters__price-head { display: flex; justify-content: space-between; align-items: center; height: 24px; }
 .filters__heading { font-weight: 600; font-size: 20px; line-height: 24px; }
-.filters__icon { width: 24px; height: 24px; opacity: 0.4; }
+.filters__icon { width: 24px; height: 24px; }
 .hr { position: relative; height: 0; align-self: stretch; }
 .hr::after { content: ''; position: absolute; left: 0; right: 0; top: -0.5px; height: 1px; background: var(--border-soft); }
 .filters__cats { display: flex; flex-direction: column; gap: 20px; }
 .filters__cat { display: flex; justify-content: space-between; align-items: center; height: 16px; font-size: 16px; line-height: 19px; color: var(--muted); text-align: left; }
-.filters__cat img { width: 16px; height: 16px; transform: rotate(-90deg); opacity: 0.6; }
+.filters__cat img { width: 16px; height: 16px; transform: rotate(-90deg); }
 .filters__cat.is-active { color: var(--black); font-weight: 500; }
 .filters__price { display: flex; flex-direction: column; gap: 20px; }
 .filters__price-head img { width: 16px; height: 16px; transform: rotate(180deg); }
@@ -131,7 +131,7 @@ ul { list-style: none; }
 .qty { display: flex; justify-content: center; align-items: center; gap: 20px; width: 127px; height: 48px; padding: 12px 20px; background: var(--light); border-radius: 62px; font-family: var(--sf); font-size: 14px; line-height: 17px; }
 .qty button { width: 20px; height: 20px; display: flex; }
 .qty button img { width: 20px; height: 20px; }
-.qty button:disabled { opacity: 0.3; cursor: default; }
+.qty button:disabled { cursor: default; }
 .qty__value { min-width: 7px; text-align: center; }
 
 /* ============ Bag ============ */
@@ -241,10 +241,15 @@ textarea.field__input { height: 144px; padding: 13px 15px; resize: none; }
 }
 @media (max-width: 1100px) and (min-width: 768px) {
   .products-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .products-row--home { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .pdp__top { flex-direction: column; }
   .pdp__img { width: 100%; max-width: 610px; }
   .pdp__info { padding-top: 0; }
   .bag { flex-direction: column; }
+}
+
+@media (max-width: 899px) and (min-width: 768px) {
+  .products-row--home { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 /* ============ Mobile (390 design) ============ */

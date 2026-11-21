@@ -6,3 +6,6 @@ raw/
 design/
 
 .DS_Store
+
+# Local editor/preview settings
+.claude/

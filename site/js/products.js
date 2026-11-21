@@ -102,11 +102,15 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('sheet-overlay').addEventListener('click', closeSheet);
   document.getElementById('filters-close').addEventListener('click', closeSheet);
 
-  getCategories().then((list) => {
-    categories = list;
-    drawCategories();
-    updateTitle();
-  });
+  function loadCategories(attempt = 1) {
+    getCategories().then((list) => {
+      if (!list.length && attempt < 4) { setTimeout(() => loadCategories(attempt + 1), attempt * 3000); return; }
+      categories = list;
+      drawCategories();
+      updateTitle();
+    });
+  }
+  loadCategories();
   drawRange();
   load();
 });

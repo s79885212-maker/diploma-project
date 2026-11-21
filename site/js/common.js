@@ -104,7 +104,12 @@ async function refreshBagCount() {
 // ---------- Footer ----------
 let categoriesPromise = null;
 function getCategories() {
-  if (!categoriesPromise) categoriesPromise = api.categories().then((d) => d.categories).catch(() => []);
+  if (!categoriesPromise) {
+    categoriesPromise = api.categories().then((d) => d.categories).catch(() => {
+      categoriesPromise = null; // don't cache a failure (e.g. 429) — next call retries
+      return [];
+    });
+  }
   return categoriesPromise;
 }
 

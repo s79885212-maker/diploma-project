@@ -8,13 +8,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     .then((d) => best.replaceChildren(...d.products.map((p) => productCard(p))))
     .catch((e) => best.replaceChildren(statusText(e.message)));
 
-  getCategories().then((list) => {
-    cats.replaceChildren(...list.slice(0, 3).map((c) =>
-      h('a', { class: 'category', href: 'products.html?category=' + encodeURIComponent(c._id) },
-        h('img', { src: c.image, alt: c.title }),
-        h('span', { class: 'btn-glass t-base' }, c.title),
-      )));
-  });
+  function loadCategories(attempt = 1) {
+    getCategories().then((list) => {
+      if (!list.length && attempt < 4) { setTimeout(() => loadCategories(attempt + 1), attempt * 3000); return; }
+      cats.replaceChildren(...list.slice(0, 3).map((c) =>
+        h('a', { class: 'category', href: 'products.html?category=' + encodeURIComponent(c._id) },
+          h('img', { src: c.image, alt: c.title }),
+          h('span', { class: 'btn-glass t-base' }, c.title),
+        )));
+    });
+  }
+  loadCategories();
 
   api.newest(12)
     .then((d) => featured.replaceChildren(...d.products.map((p) => productCard(p))))
